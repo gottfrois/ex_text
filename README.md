@@ -1,11 +1,10 @@
 # ExText
 
-**TODO: Add description**
+A collection of text algorithms for Elixir.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_text` to your list of dependencies in `mix.exs`:
+Add `ex_text` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -13,7 +12,23 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_text](https://hexdocs.pm/ex_text).
+Run
 
+```
+mix deps.get
+```
+
+## Usage
+
+### Simon White algorithm
+
+Simon White algorithm computes the similarity between two strings s1 and s2 as
+twice the number of character pairs that are common to both strings divided by
+the sum of the number of character pairs in the two strings.
+
+More information can be found [here](http://www.catalysoft.com/articles/StrikeAMatch.html).
+
+```elixir
+iex> ExText.WhiteSimilarity.similarity("Healed", "Sealed")
+0.8
+```
